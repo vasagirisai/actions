@@ -219,3 +219,20 @@ if [[ -z "$PR_URL" ]]; then
 fi
 
 echo "::endgroup::"
+
+############################
+echo "::group::Set outputs"
+
+echo "pr_url=${PR_URL}" >> $GITHUB_OUTPUT
+echo "pr_number=${PR_URL##*/}" >> $GITHUB_OUTPUT
+echo "pr_created=${PR_CREATED}" >> $GITHUB_OUTPUT
+
+if [[ "$LINES_CHANGED" = "0" ]]; then
+  echo "has_changed_files=false" >> $GITHUB_OUTPUT
+else
+  echo "has_changed_files=true" >> $GITHUB_OUTPUT
+fi
+
+cat $GITHUB_OUTPUT
+
+echo "::endgroup::"

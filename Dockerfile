@@ -6,6 +6,9 @@ LABEL \
   "repository"="https://github.com/vasagirisai/actions" \
   "maintainer"="vasagirisai@gmail.com>"
 
+RUN echo https://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+  apk add --no-cache git hub bash
+
 ADD *.sh /
 
 RUN chmod +x entrypoint.sh

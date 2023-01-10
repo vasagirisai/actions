@@ -1,6 +1,6 @@
 name: GitHub Pull Request Action
-author: Wei He <github@weispot.com>
-description: ⤵️ Create pull request
+author: NagaSaiKumar
+description: Create pull request
 branding:
   icon: 'git-pull-request'
   color: 'gray-dark'
